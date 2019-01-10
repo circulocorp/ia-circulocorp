@@ -1,0 +1,21 @@
+{
+	"name": "ia-circulocorp",
+	"version": "0.0.1",
+	"description": "Monitoreo automatico",
+	"author": "Mauricio Barrera",
+	"dev": {
+		"API_URL": "http://192.168.1.74:8080",
+		"slack": "https://hooks.slack.com/services/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",
+		"secrets": false
+    },
+    "stage": {
+		"API_URL": "http://192.168.1.68:8080",
+		"slack": "https://hooks.slack.com/services/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",
+		"secrets": true
+    },
+	"prod": {
+		"API_URL": "http://10.0.4.188:8080",
+		"slack": "https://hooks.slack.com/services/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",
+		"secrets": true
+	}
+}
