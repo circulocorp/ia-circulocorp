@@ -1,0 +1,46 @@
+Metadata-Version: 2.1
+Name: PydoNovosoft
+Version: 1.1.6
+Summary: Some Python's utilities for other projects
+Home-page: https://github.com/donovosoft/PydoNovosoft
+Author: Mauricio Barrera
+Author-email: mauricio.barrerag@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 2.7
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Requires-Dist: protobuf
+Requires-Dist: pytz
+
+PydoNovosoft
+------------
+
+doNovosoft python library
+
+|Version| |Python versions|
+
+Getting Started
+------------
+
+
+Pre-requisites
+------------
+
+Usage
+------------
+
+Authors
+------------
+* **Mauricio Barrera (maubarrerag)**
+
+
+
+.. |Version| image:: https://img.shields.io/pypi/v/PydoNovosoft.svg?
+   :target: http://badge.fury.io/py/PydoNovosoft
+
+.. |Python versions| image:: https://img.shields.io/pypi/pyversions/PydoNovosoft.svg
+    :target: https://pypi.python.org/pypi/PydoNovosoft
+
+

@@ -1,1 +1,5 @@
 PydoNovosoft
+pika
+requests
+json
+json_logging

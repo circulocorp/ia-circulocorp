@@ -1,0 +1,4 @@
+venv
+Dockerfile
+buildspec.yml
+README.md
