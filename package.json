@@ -6,26 +6,23 @@
 	"dev": {
 		"API_URL": "http://127.0.0.1:8080",
         "RABBITMQ_URL": "192.168.1.71",
-		"slack": "https://hooks.slack.com/services/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",
 		"rabbitmq_user": "admin",
-		"rabbitmq_passw": "admin123",
-		"token_key": "admin123",
-		"mzone_user": "4L707R4CK",
-		"mzone_pass": "73LC3L2018",
+		"rabbitmq_passw": "admin",
+		"token_key": "",
+		"mzone_user": "",
+		"mzone_pass": "",
 		"sleep": "1800",
 		"secrets": false
     },
     "stage": {
 		"API_URL": "http://192.168.1.68:8080",
 		"RABBITMQ_URL": "10.0.4.100",
-		"slack": "https://hooks.slack.com/services/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",
 		"sleep": "1800",
 		"secrets": true
     },
 	"prod": {
 		"API_URL": "http://10.0.4.188:8080",
 		"RABBITMQ_URL": "10.0.4.100",
-		"slack": "https://hooks.slack.com/services/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",
 		"sleep": "1800",
 		"secrets": true
 	}
