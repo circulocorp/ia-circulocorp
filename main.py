@@ -62,10 +62,11 @@ def mark_quarantine(vehicles):
     for v in vehicles:
         logger.info("Vehicle on quarantine",
                     extra={'props': {"app": config["name"], "label": config["name"], "vehicle": v}})
-        requests.patch(url+"/api/vehicles/"+v["_id"], json=data)
+        resp = requests.patch(url+"/api/vehicles/"+v["_id"], json=data)
+        print(resp.content)
         envelop = dict()
         envelop["message"] = "La unidad "+v["Description"]+" esta en cuarentena porque no ha reportado ubicacion"
-        envelop["address"] = "525543593417"
+        envelop["address"] = "tel:525543593417"
         logger.info("Enviando mensaje", extra={'props': {"app": config["name"], "label": config["name"],
                                                          "message": envelop["message"], "address": envelop["address"]}})
         send_to_rabbit(envelop)
