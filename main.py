@@ -65,8 +65,9 @@ def mark_quarantine(vehicles):
                     extra={'props': {"app": config["name"], "label": config["name"], "vehicle": v}})
         resp = requests.patch(url+"/api/vehicles/"+v["Id"], json=data)
         envelop = dict()
-        envelop["message"] = "La unidad "+v["Description"]+" esta en cuarentena porque no ha reportado ubicacion"
-        envelop["address"] = "tel:525543593417"
+        envelop["message"] = "La unidad "+v["Registration"]+" de "+\
+                             v["provider"]+" esta en cuarentena porque no ha reportado ubicacion recientemente"
+        envelop["address"] = "5543593417"
         envelops.append(envelop)
 
     send_to_rabbit(envelops)
