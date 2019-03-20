@@ -13,7 +13,7 @@ phases:
   build:
     commands:
       - echo Build version $VERSION started on `date`
-      - docker build -t mznotifier:$VERSION .
+      - docker build -t ia-circulocorp:$VERSION .
       - docker tag ia-circulocorp:$VERSION $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/ia-circulocorp:$VERSION
       - docker tag ia-circulocorp:$VERSION $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/ia-circulocorp:latest
   post_build:
