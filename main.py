@@ -66,6 +66,8 @@ def mark_quarantine(vehicles):
         envelop = dict()
         envelop["message"] = "La unidad "+v["Description"]+" esta en cuarentena porque no ha reportado ubicacion"
         envelop["address"] = "525543593417"
+        logger.info("Enviando mensaje", extra={'props': {"app": config["name"], "label": config["name"],
+                                                         "message": envelop["message"], "address": envelop["address"]}})
         send_to_rabbit(envelop)
 
 

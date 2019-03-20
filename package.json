@@ -1,6 +1,6 @@
 {
 	"name": "ia-circulocorp",
-	"version": "0.5.0",
+	"version": "0.6.0",
 	"description": "Monitoreo automatico",
 	"author": "Mauricio Barrera",
 	"dev": {
@@ -23,7 +23,7 @@
 	"prod": {
 		"API_URL": "http://10.0.4.188:8080",
 		"RABBITMQ_URL": "10.0.4.100",
-		"sleep": "1800",
+		"sleep": "900",
 		"secrets": true
 	}
 }
