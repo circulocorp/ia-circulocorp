@@ -59,28 +59,29 @@ def get_pool_false(vehicles):
 
 def mark_quarantine(vehicles):
     data = {"quarantine": 1}
+    envelops = []
     for v in vehicles:
         logger.info("Vehicle on quarantine",
                     extra={'props': {"app": config["name"], "label": config["name"], "vehicle": v}})
-        resp = requests.patch(url+"/api/vehicles/"+v["_id"], json=data)
-        print(resp.content)
+        resp = requests.patch(url+"/api/vehicles/"+v["Id"], json=data)
         envelop = dict()
         envelop["message"] = "La unidad "+v["Description"]+" esta en cuarentena porque no ha reportado ubicacion"
         envelop["address"] = "tel:525543593417"
-        logger.info("Enviando mensaje", extra={'props': {"app": config["name"], "label": config["name"],
-                                                         "message": envelop["message"], "address": envelop["address"]}})
-        send_to_rabbit(envelop)
+        envelops.append(envelop)
+
+    send_to_rabbit(envelops)
 
 
-def send_to_rabbit(envelop):
+def send_to_rabbit(envelops):
+    mq = dict()
+    mq["data"] = envelops
     logger.info("Posting data to RabbitMQ", extra={'props': {"app": config["name"], "label": config["name"]}})
     credentials = pika.PlainCredentials(rabbit_user, rabbit_pass)
     parameters = pika.ConnectionParameters(rabbitmq, 5672, '/', credentials)
     connection = pika.BlockingConnection(parameters)
     channel = connection.channel()
     channel.exchange_declare(exchange='circulocorp', exchange_type='direct', durable=True)
-    channel.basic_publish(exchange='circulocorp', routing_key='notificaciones',
-                          body=json.dumps(envelop))
+    channel.basic_publish(exchange='circulocorp', routing_key='notificaciones', body=json.dumps(mq))
 
 
 def start():
