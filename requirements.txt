@@ -1,4 +1,4 @@
-PydoNovosoft
-pika
+PydoNovosoft==1.1.7.2
+pika==0.12.0
 requests
 json_logging
